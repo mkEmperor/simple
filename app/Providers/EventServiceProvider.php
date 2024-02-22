@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Events\SubmissionSavedEvent;
 use App\Listeners\SubmissionSavedListener;
+use App\Models\Submission;
+use App\Observers\SubmissionObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -29,7 +31,7 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Submission::observe(SubmissionObserver::class);
     }
 
     /**

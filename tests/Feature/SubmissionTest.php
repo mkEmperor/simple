@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Validation\ValidationException;
 use Tests\TestCase;
 
 class SubmissionTest extends TestCase
